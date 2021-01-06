@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerControllerX : MonoBehaviour
 {
@@ -9,11 +10,17 @@ public class PlayerControllerX : MonoBehaviour
     public float verticalInput;
     public float horizontalInput;
     public float rudderSpeed;
+    private int point;
+    private Rigidbody rb;
+    public TextMeshProUGUI pointText;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
+        point = 0;
+        SetPointText();
     }
 
     // Update is called once per frame
@@ -41,5 +48,23 @@ public class PlayerControllerX : MonoBehaviour
         {
             transform.Rotate(Vector3.down * rudderSpeed * Time.deltaTime);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Point"))
+        {
+            other.gameObject.SetActive(false);
+            point = point + 1;
+            
+
+            SetPointText();
+        }
+          
+    }
+
+    void SetPointText()
+    {
+        pointText.text = "Points: " + point.ToString(); 
     }
 }
