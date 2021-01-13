@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerX : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class PlayerControllerX : MonoBehaviour
     private int point;
     private Rigidbody rb;
     public TextMeshProUGUI pointText;
+    public GameObject plane;
+    private GameManagerX gameManager;
+    public ParticleSystem deathParticle;
     
 
     // Start is called before the first frame update
@@ -21,6 +25,7 @@ public class PlayerControllerX : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         point = 0;
         SetPointText();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManagerX>();
     }
 
     // Update is called once per frame
@@ -41,6 +46,7 @@ public class PlayerControllerX : MonoBehaviour
         // tilt the plane left to right based on left and right keys
         transform.Rotate(Vector3.back * rotationSpeed * Time.deltaTime * horizontalInput);
 
+        //for rudders
         if (Input.GetKey("e"))
         {
             transform.Rotate(Vector3.up * rudderSpeed * Time.deltaTime);
@@ -50,6 +56,7 @@ public class PlayerControllerX : MonoBehaviour
         {
             transform.Rotate(Vector3.down * rudderSpeed * Time.deltaTime);
         }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -69,4 +76,16 @@ public class PlayerControllerX : MonoBehaviour
     {
         pointText.text = "Points: " + point.ToString(); 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Map"))
+        {
+            Cursor.visible = true;
+            Destroy(gameObject);
+            Instantiate(deathParticle, transform.position, deathParticle.transform.rotation);
+            gameManager.GameOver();
+        }
+    }
+    
 }

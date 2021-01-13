@@ -225,7 +225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 188, y: 40}
+  m_AnchoredPosition: {x: 188, y: 54}
   m_SizeDelta: {x: 276.33514, y: 148.80655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25733823
@@ -305,7 +305,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -164, y: -12.58}
+  m_AnchoredPosition: {x: -164, y: -1.5}
   m_SizeDelta: {x: 172.93634, y: 53.16069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &680639763
@@ -468,7 +468,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit Game :(
+  m_Text: Quit Game
 --- !u!222 &892601666
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -834,10 +834,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Use the keys Q and E for the rudders
-
-    Use WASD/Arrow Keys to maneuver
-    the plane '
+  m_Text: "Use the keys Q and E for the rudders\nUse WASD/Arrow Keys to maneuver
+    the plane \nNavigate the course and collect all points to win!"
 --- !u!222 &1268401764
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1073,7 +1071,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Game!
+  m_Text: New Game
 --- !u!222 &1760807057
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1136,7 +1134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -171.6, y: 68.6}
+  m_AnchoredPosition: {x: -171.6, y: 83}
   m_SizeDelta: {x: 341.73422, y: 101.42656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1883379391
@@ -1216,7 +1214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -165.6, y: -89.2}
+  m_AnchoredPosition: {x: -163.5, y: -82.4}
   m_SizeDelta: {x: 172.93628, y: 48.627457}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031822344
@@ -1240,7 +1238,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
+    m_HighlightedColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
     m_PressedColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1327,7 +1325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: af29f0ea7e5403641b3b244ede69c374, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.1
+      value: 22.69
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: af29f0ea7e5403641b3b244ede69c374, type: 3}
       propertyPath: m_LocalPosition.z
