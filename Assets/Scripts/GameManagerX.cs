@@ -8,11 +8,12 @@ using UnityEngine.SceneManagement;
 public class GameManagerX : MonoBehaviour
 {
     public ParticleSystem explosionParticle;
-    public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI winText;
+    public TextMeshProUGUI loseText;
     public bool isGameActive;
     public Button restartButton;
-    public Button quitGameButton;
+    public Button titleScreenButton;
     public string newGameScene;
 
     // Start is called before the first frame update
@@ -39,7 +40,23 @@ public class GameManagerX : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         isGameActive = false;
         restartButton.gameObject.SetActive(true);
-        quitGameButton.gameObject.SetActive(true);
+        titleScreenButton.gameObject.SetActive(true);
+    }
+
+    public void Win()
+    {
+        winText.gameObject.SetActive(true);
+        isGameActive = false;
+        restartButton.gameObject.SetActive(true);
+        titleScreenButton.gameObject.SetActive(true);
+    }
+
+    public void Lose()
+    {
+        loseText.gameObject.SetActive(true);
+        isGameActive = false;
+        restartButton.gameObject.SetActive(true);
+        titleScreenButton.gameObject.SetActive(true);
     }
 
     public void RestartGame()

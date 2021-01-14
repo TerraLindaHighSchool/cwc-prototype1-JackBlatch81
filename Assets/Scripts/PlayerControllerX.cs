@@ -86,6 +86,21 @@ public class PlayerControllerX : MonoBehaviour
             Instantiate(deathParticle, transform.position, deathParticle.transform.rotation);
             gameManager.GameOver();
         }
+
+        if(collision.gameObject.CompareTag("Finish") && point >= 6)
+        {
+            Cursor.visible = true;
+            Destroy(gameObject);
+            gameManager.Win();
+        }
+
+        if (collision.gameObject.CompareTag("Finish") && point < 6)
+        {
+            Cursor.visible = true;
+            Destroy(gameObject);
+            Instantiate(deathParticle, transform.position, deathParticle.transform.rotation);
+            gameManager.Lose();
+        }
     }
     
 }
