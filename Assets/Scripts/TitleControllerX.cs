@@ -17,7 +17,7 @@ public class TitleControllerX : MonoBehaviour
     void Update()
     {
        //for animating plane
-        transform.Translate(Vector3.forward * speed);
+        transform.Translate(Vector3.forward * speed * (1 - Time.deltaTime));
         transform.Rotate(Vector3.left * rotationSpeed * Time.deltaTime);
     }
 }
