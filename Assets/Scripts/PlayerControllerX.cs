@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControllerX : MonoBehaviour
 {
+   //fields
     public float speed;
     public float rotationSpeed;
     public float verticalInput;
@@ -22,7 +23,8 @@ public class PlayerControllerX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //for calling compoenents/ setting integers and calling methods
+        rb = GetComponent<Rigidbody>(); 
         point = 0;
         SetPointText();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManagerX>();
@@ -61,6 +63,7 @@ public class PlayerControllerX : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //for updating point text
         if(other.gameObject.CompareTag("Point"))
         {
             other.gameObject.SetActive(false);
@@ -74,11 +77,13 @@ public class PlayerControllerX : MonoBehaviour
 
     void SetPointText()
     {
+        //for updating point text
         pointText.text = "Points: " + point.ToString(); 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        //for destroying plane and displaying game over text
         if (collision.gameObject.CompareTag("Map"))
         {
             Cursor.visible = true;
@@ -87,6 +92,7 @@ public class PlayerControllerX : MonoBehaviour
             gameManager.GameOver();
         }
 
+        //fpr displaying win text 
         if(collision.gameObject.CompareTag("Finish") && point >= 6)
         {
             Cursor.visible = true;
@@ -94,6 +100,7 @@ public class PlayerControllerX : MonoBehaviour
             gameManager.Win();
         }
 
+        //for displaying lose text when player finishes with not enough points
         if (collision.gameObject.CompareTag("Finish") && point < 6)
         {
             Cursor.visible = true;

@@ -16,6 +16,7 @@ public class TitleControllerX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       //for animating plane
         transform.Translate(Vector3.forward * speed);
         transform.Rotate(Vector3.left * rotationSpeed * Time.deltaTime);
     }

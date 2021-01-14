@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotatorX : MonoBehaviour
+public class PointControllerX : MonoBehaviour
 {
+    //fields
     public ParticleSystem explosionParticle;
 
     // Start is called before the first frame update
@@ -15,11 +16,13 @@ public class RotatorX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
+        //for rotating points
+        transform.Rotate(new Vector3(10, 5, 20) * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //for point particles
         if (other.gameObject.CompareTag("Player"))
         {
             Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);

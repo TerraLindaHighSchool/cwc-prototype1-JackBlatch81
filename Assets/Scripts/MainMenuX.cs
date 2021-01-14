@@ -21,11 +21,13 @@ public class MainMenuX : MonoBehaviour
 
     public void NewGame()
     {
+        //for loading main scene
         SceneManager.LoadScene(newGameScene);
     }
 
     public void QuitGame()
     {
+        //for quitting application
         Application.Quit();
     }
 }

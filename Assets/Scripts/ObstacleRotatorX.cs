@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObstacleRotatorX : MonoBehaviour
 {
+    //fields
     public GameObject obstacle;
     public float rotationSpeed = 20.0f;
 
@@ -16,6 +17,7 @@ public class ObstacleRotatorX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //for rotating obstacles
         transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
     }
 }
